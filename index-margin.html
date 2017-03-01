@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        
+       <style>
+
+       *{
+        margin: 0;
+        padding: 0;
+         box-sizing: border-box; 
+
+       }
+      
+             html{
+            width:100%;/*cw-paddingLeftRight*/
+            height:100%;/*cw-paddingTopBottom*/
+            /*background: #ccc;*/
+
+           }
+           body{
+            padding: 10px;  /*发斯蒂芬*/
+           
+            background: #ccc;
+
+
+           }
+           .aa:after,.aa:before{
+            display: block;
+            content: '';
+            clear: both;
+           }
+           .bb,.cc{
+            float: left;
+            
+           }
+           .bb{
+            /*width: 1060px;height: 520px;*/
+            background: #ca9393;
+
+            
+           }
+           .bb{
+            /*width: 1060px;height: 520px;*/  /* bb.width/(设计稿-间距)=x/(cw-间距)    */
+            
+           }
+           /*.bb1{
+            width: 100%;
+            height: 100%;
+           }*/
+           .cc{
+            /*width: 340px;*/
+             background:#a679d0;
+          
+            /*height: 520px;*/
+           }
+           .cc1{
+            width: 100%;
+            height: 100%;
+           }
+           .ff{
+            /*width: 520px;height:330px;*/
+               background: #28176b;
+          
+           }
+           .ff1{
+            width: 100%;
+            height: 100%;
+           }
+           .gg{
+            /*width: 520px;*/
+            background:#35847c;
+           
+            /*height:330px;*/
+           }
+            .gg1{
+            width: 100%;
+            height: 100%;
+           }
+           .hh{
+            /*width: 340px;height: 330px;*/
+             background:#808222;
+            
+           }
+             .hh1{
+            width: 100%;
+            height: 100%;
+           }
+            .ff, .gg, .hh{
+                float: left;
+            }
+            .bb,.cc,.ff,.gg,.hh{
+                /*padding: 10px;*/
+                margin:10px;
+            }
+       </style>
+    </head> 
+    <body>
+    <!-- <div class="mm"> -->
+        <div class="aa">
+            <div class="bb">
+                <!-- <div class="bb1">2222222222</div> -->
+            </div>
+            <div class="cc">
+                <!-- <div class="cc1">2222</div> -->
+            </div>
+        </div>
+        <div class="dd">
+            <div class="ff">
+                <!-- <div class="ff1">22222222</div> -->
+            </div>
+            <div class="gg">
+                <!-- <div class="gg1"></div> -->
+            </div>
+            <div class="hh">
+                <!-- <div class="hh1"></div> -->
+            </div>
+        </div>
+    <!-- </div> -->
+         <script src='jquery-1.12.4.js'>
+        
+      
+        </script>
+        <script>
+        
+          function result(de,dv,cv){
+            /* bb.width/(设计稿)=x/(cw) */  /*cv 屏幕宽度*/
+              var value=de*cv/dv
+              return value
+
+          }
+          
+          var cw=$(document).width()-20
+          var ch=$(window).height()-20
+          var boxw=1440 //宽度 （每个小盒子的宽度+padding）
+          var boxh=890 //高度  （每个小盒子的高度+padding）
+
+          elementWV($(".bb"),1080,540,boxw,boxh,cw,ch)   
+                   //1080 盒子加padding的值  
+                                                            
+          elementWV($(".cc"),360,540,boxw,boxh,cw,ch)
+          elementWV($(".ff"),540,350,boxw,boxh,cw,ch)
+          elementWV($(".gg"),540,350,boxw,boxh,cw,ch)
+          elementWV($(".hh"),360,350,boxw,boxh,cw,ch)
+           function elementWV(el,dew,deh,dvw,dvh,cw,ch){
+              el.outerWidth(result(dew,dvw,cw)-20)
+             
+              el.outerHeight(result(deh,dvh,ch)-20)
+              
+          }
+
+
+          
+
+        </script>
+
+        
+
+    </body>
+  
+    </script>
+</html>

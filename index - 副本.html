@@ -2,7 +2,7 @@
 <html lang="zh-cmn-Hans">
     <head>
         <meta charset="utf-8">
-        <title>最佳方式</title>
+        <title>最佳方式 -- 超级完美  最终</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="renderer" content="webkit">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,30 +14,31 @@
        *{
         margin: 0;
         padding: 0;
-        /* box-sizing: border-box; */
+       
 
        }
        html{
-            width:100%;/*cw-paddingLeftRight*/
-            height:100%;/*cw-paddingTopBottom*/
-            /*background: #ccc;*/
+            width:100%;
+            height:100%;
+            
 
            }
            body{
-            padding: 10px;  /*发斯蒂芬*/
-           
-            background: #ccc;
+             width:100%;
+            height:100%;
+            overflow: hidden;
 
 
            }
-           /*.mm{
-            padding: 10px;
-            width: 1440px;
-            height: 890px;
+           .mm{
+
+            margin:auto;
+             padding: 10px;  
+           
             background: #ccc;
 
-           }*/
-           .aa:after,.aa:before{
+           }
+           .aa:after,.aa:before,.dd:after,.dd:before{
             display: block;
             content: '';
             clear: both;
@@ -46,47 +47,29 @@
             float: left;
             
            }
-          /* .bb{
-            width: 1060px;height: 520px;
-            
-           }*/
+          
            .bb{
             background: #ca9393;
-
-            /*width: 1060px;height: 520px;*/  /* bb.width/(设计稿-间距)=x/(cw-间距)    */
+              
             
            }
           
-          /* .cc{
-            width: 340px;
-          
-            height: 520px;
-           }*/
+         
            .cc{
            
              background:#a679d0;
            }
-          /* .ff{
-            width: 520px;height:330px;
-          
-           }*/
+         
            .ff{
             
                background: #28176b;
            }
-          /* .gg{
-            width: 520px;
-           
-            height:330px;
-           }*/
+         
             .gg{
            
                background:#35847c;
            }
-          /* .hh{
-            width: 340px;height: 330px;
-            
-           }*/
+         
              .hh{
            
              background:#808222;
@@ -101,30 +84,24 @@
        </style>
     </head> 
     <body>
-    <!-- <div class="mm"> -->
+    <div class="mm">
         <div class="aa">
             <div class="bb">
-                <!-- <div class="bb1">2222222222</div> -->
             </div>
             <div class="cc">
-                <!-- <div class="cc1">2222</div> -->
             </div>
         </div>
         <div class="dd">
             <div class="ff">
-                <!-- <div class="ff1">22222222</div> -->
             </div>
             <div class="gg">
-                <!-- <div class="gg1"></div> -->
             </div>
             <div class="hh">
-                <!-- <div class="hh1"></div> -->
             </div>
         </div>
-    <!-- </div> -->
+    </div>
         
 
-        <!-- <script src="../statics/common/js/mod.js"></script> -->
         <script src='jquery-1.12.4.js'>
         
       
@@ -137,9 +114,18 @@
               return value
 
           }
+           init()
           
-          var cw=$(document).width()-20
+          $(window).resize(function(){
+           
+            init()
+          })
+          function init(){
+            var cw=$(window).width()-20
           var ch=$(window).height()-20
+             // $('.mm').width(cw)
+             // $('.mm').height(ch)
+
           var boxw=1440 //宽度 （每个小盒子的宽度+padding）
           var boxh=890 //高度  （每个小盒子的高度+padding）
 
@@ -150,9 +136,11 @@
           elementWV($(".ff"),540,350,boxw,boxh,cw,ch)
           elementWV($(".gg"),540,350,boxw,boxh,cw,ch)
           elementWV($(".hh"),360,350,boxw,boxh,cw,ch)
+          }
+          
            function elementWV(el,dew,deh,dvw,dvh,cw,ch){
-              el.outerWidth(result(dew,dvw,cw)-20)
-              el.outerHeight(result(deh,dvh,ch)-20)
+              el.width(result(dew,dvw,cw)-20)
+              el.height(result(deh,dvh,ch)-20)
               
           }
 
@@ -163,5 +151,5 @@
 
     </body>
   
-    </script>
+   
 </html>
